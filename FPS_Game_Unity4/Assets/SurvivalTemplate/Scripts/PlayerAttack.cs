@@ -14,15 +14,7 @@ public class PlayerAttack : MonoBehaviour
 
         foreach ( var hit in hits)
         {
-            var hitables = hit.GetComponents(typeof(IHitable)); //??
-
-            if (hitables == null)
-                return;
-
-            foreach (IHitable hitable in hitables) //??
-            {
-                hitable.Hit();
-            }
+            ActivateHitables.HitAll(hit.gameObject);
         }
     }
 

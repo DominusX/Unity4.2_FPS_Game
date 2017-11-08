@@ -9,6 +9,8 @@ public class HitDamage : MonoBehaviour, IHitable
 
     public Action hasDied;
 
+    public Action hasTakenDamage;
+
     Stats stats;
     IKillable killable;
 
@@ -18,7 +20,6 @@ public class HitDamage : MonoBehaviour, IHitable
     {
         stats = GetComponent<Stats>();
         killable = (IKillable)GetComponent(typeof(IKillable));
-
         if (killable == null)
             throw new MissingComponentException("Requires an implementation of IKillable");
     }
@@ -27,10 +28,13 @@ public class HitDamage : MonoBehaviour, IHitable
     {
         stats.Health -= 10;
 
+        if (hasTakenDamage != null)
+            hasTakenDamage();
+
         if (stats.Health <= 0 && !isDead)
         {
             killable.Kill();
- 
+
             if (hasDied != null)
                 hasDied();
 
@@ -38,4 +42,4 @@ public class HitDamage : MonoBehaviour, IHitable
         }
     }
 
- }
+}

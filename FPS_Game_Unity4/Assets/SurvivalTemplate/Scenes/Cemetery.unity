@@ -16697,6 +16697,10 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
   m_RootGameObject: {fileID: 1164721972}
@@ -17156,8 +17160,11 @@ GameObject:
   - 114: {fileID: 1164721976}
   - 114: {fileID: 1164721975}
   - 114: {fileID: 1164721974}
+  - 114: {fileID: 1164721979}
+  - 114: {fileID: 1164721978}
+  - 114: {fileID: 1164721980}
   m_Layer: 0
-  m_Name: First Person Controller
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17278,6 +17285,40 @@ CharacterController:
   m_SkinWidth: .0500000007
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1164721978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1164721972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e453f4ad8123584f947137ef1d1ab7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1164721979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1164721972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3eb482f210d775489e8a36e93846f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 500
+--- !u!114 &1164721980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1164721972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32ac32962986374c8c7c5191d41026c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1167384121
 GameObject:
   m_ObjectHideFlags: 0
@@ -19089,7 +19130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   astarData:
     hasBeenReverted: 0
-    data: 020000000d6772617068302e62696e617279dc0000004b3065ea93d1084fd252f47806212f2d00000000000a47726964204772617068010052b89e3e000000000000000036667ec1000000000000803f0000000000000000000000000000000052b89e3e3633b5c10000000000000000000000000000803f0000803f00000000000000000000000026d57abe000000000c290cc0e17afa4115ae23420000000052b89e3e010000000000803f00000040000000000200000000000000ffffffff0000c842000000803f01000101cdcccc3e010000000000b442000000000001000000000100000001000000803f000000c8420b6d6574612e62696e6172795f00000002412a0300000006000000ffffffffffffffff010000000100000021346630386431393365613635333034622d3264326632313036373866343532643201000000155061746866696e64696e672e4772696447726170680100000000000000
+    data: 020000000d6772617068302e62696e617279dc0000004b3065ea93d1084fd252f47806212f2d00000000010a47726964204772617068010152b89e3e000000000000000036667ec1000000000000803f0000000000000000000000000000000052b89e3e3633b5c10000000000000000000000000000803f0000803f00000000000000000000000026d57abe000000000c290cc0e17afa4115ae23420000000052b89e3e010000000000803f00000040000000000200000000000000ffffffff0000c842000000803f01000101cdcccc3e010000000000b442000000000001000000000100000001000000803f000000c8420b6d6574612e62696e6172795f00000002412a0300000006000000ffffffffffffffff010000000100000021346630386431393365613635333034622d3264326632313036373866343532643201000000155061746866696e64696e672e4772696447726170680100000000000000
     data_backup: 
     data_cachedStartup: 
     revertData: 
@@ -19157,10 +19198,10 @@ MonoBehaviour:
   minAreaSize: 10
   limitGraphUpdates: 1
   maxGraphUpdateFreq: .200000003
-  lastScanTime: .0730566978
+  lastScanTime: .0810099021
   inGameDebugPath: 
   isScanning: 0
-  showGraphs: 1
+  showGraphs: 0
 --- !u!1 &1288634256
 GameObject:
   m_ObjectHideFlags: 0
@@ -27766,9 +27807,10 @@ GameObject:
   - 82: {fileID: 1748244420}
   - 114: {fileID: 1748244419}
   - 114: {fileID: 1748244423}
-  - 114: {fileID: 1748244424}
   - 114: {fileID: 1748244422}
   - 114: {fileID: 1748244421}
+  - 114: {fileID: 1748244424}
+  - 114: {fileID: 1748244425}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -28018,6 +28060,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathSound: {fileID: 8300000, guid: 911c300f877b815489ed9d8be1eef474, type: 3}
   deathAnimation: {fileID: 7400020, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
+--- !u!114 &1748244425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400014, guid: 9a5e4412211bd4e4380e6679bb2d1b51,
+    type: 2}
+  m_PrefabInternal: {fileID: 1987320170}
+  m_GameObject: {fileID: 1748244413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e54dea8baca08f4e8623f7677e59a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackAnimation: {fileID: 0}
+  attackAudio: {fileID: 0}
+  chargingAudio: {fileID: 0}
+  attackRange: 2
+  attackDelay: 2
 --- !u!1 &1762489931
 GameObject:
   m_ObjectHideFlags: 0

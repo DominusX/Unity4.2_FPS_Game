@@ -46,8 +46,7 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        currentEnemyCount = currentWaveNumber * 5; //each wave will increase by five enemies
-        
+        currentEnemyCount = currentWaveNumber * 5;
         Spawn();
     }
 
@@ -68,7 +67,7 @@ public class Spawner : MonoBehaviour
 
     void EnemyHasDied()
     {
-        Debug.Log("died");
+        Debug.Log("died " + currentEnemyCount);
         currentEnemyCount--;
     }
 

@@ -1,0 +1,11 @@
+E:\Unity Projects\FPS_Game_Unity4\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+E:\Unity Projects\FPS_Game_Unity4\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+E:\Unity Projects\FPS_Game_Unity4\Temp\bin\Debug\UnityEditor.dll
+E:\Unity Projects\FPS_Game_Unity4\Temp\bin\Debug\UnityEngine.dll
+E:\Unity Projects\FPS_Game_Unity4\Temp\bin\Debug\Mono.Cecil.dll
+E:\Unity Projects\FPS_Game_Unity4\Temp\bin\Debug\nunit.framework.dll
+E:\Unity Projects\FPS_Game_Unity4\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+E:\Unity Projects\FPS_Game_Unity4\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
+E:\Unity Projects\FPS_Game_Unity4\obj\Debug\Assembly-CSharp-firstpass-vs.csproj.CoreCompileInputs.cache
+E:\Unity Projects\FPS_Game_Unity4\obj\Debug\Assembly-CSharp-firstpass.dll
+E:\Unity Projects\FPS_Game_Unity4\obj\Debug\Assembly-CSharp-firstpass.pdb
