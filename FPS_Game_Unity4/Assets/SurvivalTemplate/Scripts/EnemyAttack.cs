@@ -20,7 +20,7 @@ public class EnemyAttack : MonoBehaviour {
     void Update ()
     {
         //check distance between enemy and player
-        if (Vector3.Distance(transform.position, player.position) < attackRange && !isCharging)
+        if (IsInAttackRange && !isCharging)
         {
             Invoke("Attack", attackDelay);
             audio.PlayOneShot(chargingAudio);
@@ -28,13 +28,25 @@ public class EnemyAttack : MonoBehaviour {
         }
     }
 
+    private bool IsInAttackRange
+    {
+        get { return Vector3.Distance(transform.position, player.position) < attackRange; }
+    }
+
     private void Attack()
     {
+        
+
+        if (!IsInAttackRange)
+            return;
+
         ActivateHitables.HitAll(player.gameObject);
 
         animation.CrossFade(attackAnimation.name);
 
         audio.PlayOneShot(attackAudio);
+
         isCharging = false;
+
     }
 }

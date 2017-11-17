@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
 
     public float spawnOffset = 3.0f;
     public float SpawnDelay = 5;
+    public int enemyCountIncrement = 5;
 
     int currentEnemyCount;
     int currentWaveNumber = 1;
@@ -38,7 +39,7 @@ public class Spawner : MonoBehaviour
         if (currentWaveNumber <= 0)
         {
             currentEnemyCount++;
-            currentEnemyCount = currentWaveNumber * 5; //each wave will increase by five enemies
+            currentEnemyCount = currentWaveNumber * enemyCountIncrement; //each wave will increase by five enemies
             Invoke("Spawn", SpawnDelay);
         }
             
@@ -46,8 +47,7 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        currentEnemyCount = currentWaveNumber * 5;
-        Spawn();
+        CheckIfReadySpawn()
     }
 
     private void Spawn()
