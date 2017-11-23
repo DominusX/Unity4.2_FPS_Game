@@ -79,12 +79,13 @@ public class UISlider : IgnoreTimeScale
 	bool mInitDone = false;
 	Vector2 mSize = Vector2.zero;
 	Vector2 mCenter = Vector3.zero;
+    internal float value;
 
-	/// <summary>
-	/// Value of the slider.
-	/// </summary>
+    /// <summary>
+    /// Value of the slider.
+    /// </summary>
 
-	public float sliderValue
+    public float sliderValue
 	{
 		get
 		{
