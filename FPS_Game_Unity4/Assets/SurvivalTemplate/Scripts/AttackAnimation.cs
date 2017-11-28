@@ -1,19 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttackAnimation : MonoBehaviour
+public class AttackAnimation : MonoBehaviour, IPickupable
 {
     public AnimationClip AttackAnimationClip;
 
-	// Update is called once per frame
+    bool isMounted = false;
+
 	void Update () 
     {// when we pressed left mouse button, animation blends from idle to attack animation
         //after attack has finished, it fades back to idle
+
+        if (!isMounted)
+            return;
+
         if (Input.GetMouseButton(0))
             animation.Play(AttackAnimationClip.name);
         else if (IsAttackFinished)
             animation.CrossFade(animation.clip.name);
 
+    }
+
+    public void Pickup(GameObject player)
+    {
+        isMounted = true;
+        animation.Play();
     }
 
     private bool IsAttackFinished

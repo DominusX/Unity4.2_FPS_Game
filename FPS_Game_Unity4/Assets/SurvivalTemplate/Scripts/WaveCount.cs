@@ -15,12 +15,15 @@ public class WaveCount : MonoBehaviour {
             throw new MissingComponentException("Requires Spawner Component. Not found");
 
         spawner.WaveSpawned += WaveSpawned;
-        spawner.EnemyCountChanged += EnemyCountDecreased;
+        spawner.EnemyCountDecreased += EnemyCountDecreased;
+
+        EnemyCountLabel.text = spawner.enemyCountIncrement.ToString();
 	}
 	
-	void WaveSpawned(int waveCount)
+	void WaveSpawned(int waveCount, int enemyCount)
     {
         waveCountLabel.text = waveCount.ToString();
+        EnemyCountLabel.text = enemyCount.ToString();
     }
 
     private void EnemyCountDecreased(int enemyCount)

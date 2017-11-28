@@ -7,8 +7,8 @@ public class Spawner : MonoBehaviour
     public GameObject enemy;
     public GameObject player;
 
-    public Action<int> WaveSpawned;
-    public Action<int> EnemyCountChanged;
+    public Action<int, int> WaveSpawned;
+    public Action<int> EnemyCountDecreased;
 
     public float spawnOffset = 3.0f;
     public float SpawnDelay = 5;
@@ -57,11 +57,9 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
-        if (EnemyCountChanged != null)
-            EnemyCountChanged(currentEnemyCount);
 
         if (WaveSpawned != null)
-            WaveSpawned(currentWaveNumber);
+            WaveSpawned(currentWaveNumber, currentEnemyCount);
 
         for (int i = 0; i < currentEnemyCount; i++) //looping through count of spawn points
         {
@@ -80,8 +78,8 @@ public class Spawner : MonoBehaviour
         Debug.Log("died " + currentEnemyCount);
         currentEnemyCount--;
 
-        if (EnemyCountChanged != null)
-            EnemyCountChanged(currentEnemyCount);
+        if (EnemyCountDecreased != null)
+            EnemyCountDecreased(currentEnemyCount);
     }
 
     private void SetAITarget(GameObject enemyGameObject)
