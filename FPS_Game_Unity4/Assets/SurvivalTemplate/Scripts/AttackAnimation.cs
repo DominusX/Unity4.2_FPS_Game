@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttackAnimation : MonoBehaviour, IPickupable
+public class AttackAnimation : MonoBehaviour, IEquipable
 {
     public AnimationClip AttackAnimationClip;
 
@@ -21,17 +21,22 @@ public class AttackAnimation : MonoBehaviour, IPickupable
 
     }
 
-    public void Pickup(GameObject player)
-    {
-        isMounted = true;
-        animation.Play();
-    }
-
     private bool IsAttackFinished
     {// if animation timeline bigger than animation lenght it checks if atack is finished
         get
         {
             return animation[AttackAnimationClip.name].time > animation[AttackAnimationClip.name].length;
         }
+    }
+
+    public void Equip(GameObject player)
+    {
+        isMounted = true;
+        animation.Play();
+    }
+
+    public void UnEquip()
+    {
+        isMounted = false;
     }
 }

@@ -3,10 +3,18 @@ using System.Collections;
 
 public class WeaponPickup : MonoBehaviour, IPickupable
 {
+    
     public void Pickup(GameObject player)
     {
-        var mountPoint = player.GetComponent<PlayerPickup>().mountPoint;
+        var playerEquip = player.GetComponent<PlayerEquip>();
 
-        transform.parent = mountPoint;
+        playerEquip.Equip(gameObject);
+
     }
+
+    public void Drop(GameObject player)
+    {
+        
+    }
+
 }

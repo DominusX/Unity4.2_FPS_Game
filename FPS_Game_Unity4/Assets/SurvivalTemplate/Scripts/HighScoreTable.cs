@@ -5,21 +5,19 @@ using System.Linq;
 public class HighScoreTable : MonoBehaviour {
 
     UILabel HighScoreTableLabel;
-    HighScore mahmut;
-    GameObject osman;
+    HighScore highScore;
 
 	void Start () {
-        mahmut = GameObject.Find("Score").GetComponent<HighScore>();
+        highScore = GameObject.Find("Score").GetComponent<HighScore>();
         HighScoreTableLabel = GetComponent<UILabel>();
 
-
-        if (mahmut == null)
+        if (highScore == null)
             throw new MissingReferenceException("Requires a Score Gameobject with a High Score Component");
 
         if (HighScoreTableLabel == null)
             throw new MissingComponentException("Requires a UILabel for the score list");
 
-        var descendingScores = mahmut.HighScoreList.OrderByDescending(d => d).ToArray();
+        var descendingScores = highScore.HighScoreList.OrderByDescending(d => d).ToArray();
 
         for ( int i = 0; i < descendingScores.Length; i++)
         {

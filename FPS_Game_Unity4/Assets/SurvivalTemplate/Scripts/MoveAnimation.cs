@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveAnimation : MonoBehaviour, IPickupable
+public class MoveAnimation : MonoBehaviour, IEquipable
 {
     CharacterMotor Motor;
 
@@ -10,12 +10,6 @@ public class MoveAnimation : MonoBehaviour, IPickupable
 
     Animation anim;
     bool isMounted = false;
-
-    public void Pickup(GameObject player)
-    {
-        Motor = player.GetComponent<CharacterMotor>();
-        isMounted = true;
-    }
 
     // Use this for initialization
     void Start ()
@@ -31,4 +25,15 @@ public class MoveAnimation : MonoBehaviour, IPickupable
 
         anim[anim.clip.name].speed = Motor.movement.velocity.magnitude * AnimSpeedModifier + BaseAnimSpeed;
 	}
+
+    public void Equip(GameObject player)
+    {
+        Motor = player.GetComponent<CharacterMotor>();
+        isMounted = true;
+    }
+
+    public void UnEquip()
+    {
+        isMounted = false;
+    }
 }

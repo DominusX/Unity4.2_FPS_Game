@@ -40,9 +40,9 @@ public class Spawner : MonoBehaviour
 
     private void CheckIfReadySpawn()
     {
-        if (currentWaveNumber <= 0)
+        if (currentEnemyCount <= 0)
         {
-            currentEnemyCount++;
+            currentWaveNumber++;
             currentEnemyCount = currentWaveNumber * enemyCountIncrement; //each wave will increase by five enemies
             Invoke("Spawn", SpawnDelay);
         }
@@ -58,8 +58,8 @@ public class Spawner : MonoBehaviour
     private void Spawn()
     {
 
-        if (WaveSpawned != null)
-            WaveSpawned(currentWaveNumber, currentEnemyCount);
+        //if (WaveSpawned != null)
+        //    WaveSpawned(currentWaveNumber, currentEnemyCount);
 
         for (int i = 0; i < currentEnemyCount; i++) //looping through count of spawn points
         {
@@ -78,8 +78,8 @@ public class Spawner : MonoBehaviour
         Debug.Log("died " + currentEnemyCount);
         currentEnemyCount--;
 
-        if (EnemyCountDecreased != null)
-            EnemyCountDecreased(currentEnemyCount);
+        //if (EnemyCountDecreased != null)
+        //    EnemyCountDecreased(currentEnemyCount);
     }
 
     private void SetAITarget(GameObject enemyGameObject)

@@ -890,6 +890,7 @@ GameObject:
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400014}
+  - 114: {fileID: 11400016}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -2146,6 +2147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 30
+  ammoCount: 30
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2198,6 +2200,18 @@ MonoBehaviour:
   chargingAudio: {fileID: 8300000, guid: db80d30d7936a984983ffd973d5e1450, type: 3}
   attackRange: 2
   attackDelay: 2
+--- !u!114 &11400016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c760e29a636cd4479e964351d0d351c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 100000, guid: 14ffe3f09299ce14e985418b06549e18, type: 2}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
