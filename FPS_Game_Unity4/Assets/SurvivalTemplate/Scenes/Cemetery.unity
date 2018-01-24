@@ -17683,7 +17683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3eb482f210d775489e8a36e93846f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 500
 --- !u!114 &1164721980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32675,7 +32675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1936341049
 Transform:
   m_ObjectHideFlags: 0
